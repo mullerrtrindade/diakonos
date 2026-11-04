@@ -15,49 +15,323 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#07111f;--surface:#0d1b2b;--surface2:#102238;--line:rgba(173,201,230,.14);--text:#edf4fb;--muted:#9aacc0;--blue:#65b5ff;--cyan:#70e0e2;--max:1120px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(35,108,166,.17),transparent 38%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 44px));margin:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:#fff;color:#07111f;padding:10px;z-index:10}
-    .topbar{height:78px;border-bottom:1px solid var(--line);background:rgba(7,17,31,.86);backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.topbar-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.brand img{width:132px;height:auto;display:block}.nav{display:flex;gap:28px;align-items:center;font-size:.9rem;color:var(--muted)}.nav a:hover,.nav a[aria-current=page]{color:var(--blue)}.back{border:1px solid var(--line);padding:9px 15px;border-radius:999px;font-size:.88rem}.back:hover{border-color:var(--blue);color:var(--blue)}
-    .hero{padding:78px 0 56px}.hero-grid{display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:center}.eyebrow,.kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700}.eyebrow:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin:0 10px 1px 0;box-shadow:0 0 14px var(--cyan)}h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.16;margin:0}h1{font-size:clamp(2.6rem,6vw,4.8rem);letter-spacing:-.055em;margin:18px 0 8px}.role{font-size:clamp(1rem,2vw,1.2rem);color:#c4d7e9;font-weight:600}.intro{max-width:720px;color:var(--muted);font-size:1.04rem;margin:22px 0 26px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:9px;background:linear-gradient(110deg,#247dc5,#36a6c5);color:white;font-weight:700;font-size:.9rem;box-shadow:0 8px 30px rgba(34,133,190,.2)}.btn.secondary{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text)}.portrait-wrap{position:relative;justify-self:end}.portrait-wrap:before{content:'';position:absolute;inset:-12px;border:1px solid rgba(101,181,255,.35);border-radius:22px;transform:rotate(4deg)}.portrait{display:block;width:220px;height:270px;object-fit:cover;object-position:center 25%;border-radius:16px;position:relative;filter:saturate(.82)}.location{margin-top:18px;color:var(--muted);font-size:.85rem}
-    .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 auto 66px}.quick-card{padding:19px 20px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(16,34,56,.8),rgba(13,27,43,.65))}.quick-card strong{display:block;font:700 1.05rem Manrope,sans-serif}.quick-card span{font-size:.83rem;color:var(--muted)}
-    .content-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:54px;padding-bottom:88px}.section{margin-bottom:44px}.section-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}.section-head:before{content:'';width:25px;height:2px;background:var(--blue)}h2{font-size:1.55rem;letter-spacing:-.035em}.timeline{display:grid;gap:22px}.job{padding:0 0 0 20px;border-left:1px solid rgba(101,181,255,.3);position:relative}.job:before{content:'';position:absolute;left:-5px;top:7px;width:9px;height:9px;background:var(--blue);border-radius:50%;box-shadow:0 0 14px rgba(101,181,255,.5)}.job-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}.job h3{font-size:1.03rem}.job time{font-size:.78rem;color:var(--blue);white-space:nowrap}.job .position{color:#c2d2e1;font-size:.9rem;margin:3px 0 8px}.job ul{padding-left:18px;margin:0;color:var(--muted);font-size:.9rem}.job li+li{margin-top:5px}
-    .panel{background:rgba(13,27,43,.76);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px}.panel h3{font-size:1rem;margin-bottom:14px}.skill{margin:13px 0}.skill strong{display:block;font-size:.88rem;margin-bottom:4px}.skill p,.panel p{margin:0;color:var(--muted);font-size:.85rem}.tag-list{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:.77rem;color:#c7d9e9;border:1px solid rgba(139,178,215,.2);border-radius:6px;padding:5px 8px;background:rgba(255,255,255,.025)}.project{padding:13px 0;border-top:1px solid var(--line)}.project:first-of-type{border-top:0;padding-top:0}.project strong{display:block;font-size:.9rem}.project p{margin-top:4px}.education{color:var(--muted);font-size:.88rem}.education strong{color:var(--text);display:block}.footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer a{color:var(--blue)}
-    @media(max-width:760px){.container{width:min(100% - 32px,var(--max))}.topbar{height:68px}.nav{gap:14px;font-size:.8rem}.nav a:first-child{display:none}.hero{padding:54px 0 38px}.hero-grid{grid-template-columns:1fr 120px;gap:20px}.portrait{width:116px;height:150px}.portrait-wrap:before{inset:-7px}.intro{font-size:.95rem}.quick{gap:8px;margin-bottom:48px}.quick-card{padding:13px 11px}.quick-card strong{font-size:.9rem}.quick-card span{font-size:.72rem}.content-grid{grid-template-columns:1fr;gap:0;padding-bottom:55px}.side-column{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel{margin:0;padding:17px}.job-top{display:block}.job time{display:block;margin-top:3px}}
-    @media(max-width:440px){.hero-grid{grid-template-columns:1fr 94px}.portrait{width:92px;height:124px}.nav{gap:10px}.back{padding:8px 11px}.quick{grid-template-columns:1fr}.quick-card{display:flex;justify-content:space-between;align-items:center}.side-column{grid-template-columns:1fr}h1{font-size:2.55rem}}
-    @media print{body{background:#fff;color:#172433}.topbar,.actions,.footer{display:none}.hero{padding:24px 0}.intro,.job ul,.job .position,.panel p,.education{color:#435466}.quick-card,.panel{background:#fff;border-color:#ccd6df}.tag{color:#24384b;border-color:#ccd6df}.portrait-wrap:before{display:none}.portrait{width:130px;height:160px}.content-grid{gap:30px}.section{break-inside:avoid}.job{break-inside:avoid}}
+    :root {
+      color-scheme: dark;
+      --bg: #060d18;
+      --bg-soft: #091525;
+      --surface: rgba(14, 29, 47, .76);
+      --surface-solid: #0e1d2f;
+      --surface-raised: #13263c;
+      --line: rgba(166, 198, 230, .13);
+      --line-strong: rgba(101, 181, 255, .28);
+      --text: #edf5fc;
+      --muted: #9aadc1;
+      --muted-light: #c3d2e1;
+      --blue: #70baff;
+      --cyan: #72e2e0;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .24);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 82% 2%, rgba(36, 119, 183, .19), transparent 34rem),
+        radial-gradient(ellipse at 0% 42%, rgba(40, 110, 148, .08), transparent 32rem),
+        var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .skip { position: absolute; left: -9999px; top: 12px; z-index: 20; padding: 10px 14px; border-radius: 8px; background: white; color: #07111f; }
+    .skip:focus { left: 16px; }
+
+    /* Navegação */
+    .topbar {
+      position: sticky; top: 0; z-index: 10; height: 78px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(6, 13, 24, .78);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    }
+    .topbar-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .brand img { display: block; width: 138px; height: auto; }
+    .nav { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 30px); color: var(--muted); font-size: .88rem; }
+    .nav a { transition: color .2s ease, border-color .2s ease, background .2s ease; }
+    .nav a:hover, .nav a[aria-current="page"] { color: var(--blue); }
+    .nav .back { padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); }
+    .nav .back:hover { border-color: var(--line-strong); background: rgba(101, 181, 255, .08); color: var(--blue); }
+
+    /* Apresentação */
+    .hero { position: relative; padding: clamp(64px, 8vw, 104px) 0 54px; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; width: 390px; height: 390px; right: -220px; top: 8px; border: 1px solid rgba(101,181,255,.09); border-radius: 50%; box-shadow: 0 0 0 42px rgba(101,181,255,.018), 0 0 0 84px rgba(101,181,255,.014); pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, 350px); gap: clamp(42px, 8vw, 100px); align-items: center; }
+    .eyebrow, .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: .72rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+    h1, h2, h3 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.2; }
+    h1 { margin: 18px 0 12px; font-size: clamp(3rem, 6.8vw, 5.5rem); font-weight: 800; letter-spacing: -.075em; line-height: 1.02; }
+    h1 span { color: transparent; background: linear-gradient(100deg, #f1f7fd 8%, #8fcaff 78%, #78dfdf); background-clip: text; -webkit-background-clip: text; }
+    .role { color: #c5d8e9; font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 600; letter-spacing: -.015em; }
+    .intro { max-width: 690px; margin: 24px 0 30px; color: var(--muted); font-size: 1.02rem; line-height: 1.85; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 12px 19px; border: 1px solid transparent; border-radius: 10px; background: linear-gradient(110deg, #247dc5, #36a6c5); color: white; font-size: .9rem; font-weight: 700; box-shadow: 0 10px 32px rgba(34,133,190,.22); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 14px 38px rgba(34,133,190,.3); }
+    .location { display: flex; align-items: center; gap: 8px; margin: 18px 0 0; color: var(--muted); font-size: .86rem; }
+    .location::before { content: '⌖'; color: var(--cyan); font-size: 1.1rem; }
+    .portrait-wrap { position: relative; justify-self: center; width: min(100%, 330px); isolation: isolate; }
+    .portrait-wrap::before { content: ''; position: absolute; z-index: -1; inset: -13px; border: 1px solid rgba(101,181,255,.36); border-radius: 25px; transform: rotate(4deg); transition: transform .35s ease; }
+    .portrait-wrap::after { content: ''; position: absolute; z-index: -2; inset: 20px -24px -24px 20px; border-radius: 25px; background: linear-gradient(145deg, rgba(55,145,207,.2), rgba(112,226,224,.035)); filter: blur(1px); }
+    .portrait-wrap:hover::before { transform: rotate(1deg) scale(1.015); }
+    .portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; filter: saturate(.88); box-shadow: var(--shadow); }
+
+    /* Destaques */
+    .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0 auto clamp(64px, 8vw, 100px); }
+    .quick-card { position: relative; min-height: 112px; padding: 22px 24px; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: linear-gradient(145deg, rgba(19,38,60,.86), rgba(11,25,41,.78)); box-shadow: 0 12px 34px rgba(0,0,0,.1); }
+    .quick-card::after { content: ''; position: absolute; width: 90px; height: 90px; right: -42px; bottom: -54px; border: 1px solid rgba(112,186,255,.15); border-radius: 50%; box-shadow: 0 0 0 13px rgba(112,186,255,.025); }
+    .quick-card strong { display: block; color: var(--text); font: 800 1.35rem Manrope, sans-serif; letter-spacing: -.04em; }
+    .quick-card span { display: block; margin-top: 4px; color: var(--muted); font-size: .84rem; }
+
+    /* Conteúdo */
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(290px, .85fr); gap: clamp(28px, 5vw, 64px); align-items: start; padding-bottom: 100px; }
+    .main-column, .side-column { min-width: 0; }
+    .section { margin-bottom: 54px; }
+    .section-head { display: flex; align-items: center; gap: 13px; margin-bottom: 24px; }
+    .section-head::before { content: ''; width: 26px; height: 2px; flex: 0 0 26px; background: linear-gradient(90deg, var(--blue), var(--cyan)); box-shadow: 0 0 12px rgba(101,181,255,.35); }
+    h2 { font-size: clamp(1.35rem, 2.4vw, 1.65rem); letter-spacing: -.045em; }
+    .trajectory-content { padding: clamp(22px, 3vw, 32px); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(14,29,47,.76), rgba(9,21,36,.68)); }
+    .trajectory-content p { margin: 0 0 17px; color: var(--muted-light); font-size: .94rem; line-height: 1.9; }
+    .trajectory-content p:last-child { margin-bottom: 0; }
+    .panel { margin-bottom: 16px; padding: 23px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 14px 40px rgba(0,0,0,.1); backdrop-filter: blur(10px); }
+    .panel h3 { margin-bottom: 17px; font-size: 1rem; letter-spacing: -.025em; }
+    .skill { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); }
+    .skill:first-of-type { padding-top: 0; border-top: 0; }
+    .skill:last-child { padding-bottom: 0; }
+    .skill strong, .project strong { display: block; margin-bottom: 5px; color: #e5f0fa; font-size: .9rem; }
+    .skill p, .panel p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.75; }
+    .project { padding: 14px 0; border-top: 1px solid var(--line); }
+    .project:first-of-type { padding-top: 0; border-top: 0; }
+    .project p { margin-top: 4px; }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: var(--blue); font-size: .86rem; font-weight: 700; transition: gap .2s ease, color .2s ease; }
+    .text-link:hover { gap: 11px; color: var(--cyan); }
+    .education { color: var(--muted); font-size: .86rem; line-height: 1.8; }
+    .education strong { display: block; margin: 0 0 3px; color: var(--text); font-size: .9rem; }
+    .education + .education { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--line); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { display: inline-flex; align-items: center; min-height: 32px; padding: 6px 10px; border: 1px solid rgba(139,178,215,.2); border-radius: 7px; background: rgba(255,255,255,.025); color: #c7d9e9; font-size: .78rem; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+    .tag:hover { border-color: rgba(112,186,255,.48); background: rgba(101,181,255,.08); color: var(--blue); }
+
+    .footer { border-top: 1px solid var(--line); padding: 26px 0; color: var(--muted); font-size: .81rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer a { color: var(--blue); }
+    .footer a:hover { color: var(--cyan); }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(220px, 280px); gap: 42px; }
+      .content-grid { grid-template-columns: minmax(0, 1.3fr) minmax(260px, .9fr); gap: 26px; }
+      .panel { padding: 20px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 36px, var(--max)); }
+      .topbar { height: 68px; }
+      .brand img { width: 120px; }
+      .nav { gap: 13px; font-size: .8rem; }
+      .nav a:first-child { display: none; }
+      .hero { padding: 58px 0 42px; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) 190px; gap: 24px; }
+      h1 { font-size: clamp(2.7rem, 8vw, 4rem); }
+      .intro { margin: 18px 0 24px; font-size: .94rem; }
+      .portrait-wrap { width: 100%; }
+      .quick { gap: 10px; margin-bottom: 62px; }
+      .quick-card { min-height: 100px; padding: 17px 15px; }
+      .quick-card strong { font-size: 1.12rem; }
+      .quick-card span { font-size: .75rem; }
+      .content-grid { grid-template-columns: 1fr; gap: 0; padding-bottom: 65px; }
+      .side-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+      .side-column .panel { margin: 0; }
+      .side-column .panel:first-child, .side-column .panel:last-child { grid-column: 1 / -1; }
+      .section { margin-bottom: 42px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(100% - 30px, var(--max)); }
+      .topbar-inner { gap: 10px; }
+      .brand img { width: 108px; }
+      .nav { gap: 8px; font-size: .74rem; }
+      .nav .back { padding: 8px 10px; }
+      .hero { padding-top: 46px; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) 108px; gap: 15px; align-items: start; }
+      .eyebrow { font-size: .59rem; letter-spacing: .11em; gap: 7px; }
+      .eyebrow::before { width: 6px; height: 6px; flex-basis: 6px; }
+      h1 { margin-top: 14px; font-size: clamp(2.35rem, 10vw, 3.1rem); }
+      .role { font-size: .82rem; line-height: 1.5; }
+      .intro { grid-column: 1 / -1; margin: 20px 0 22px; font-size: .91rem; }
+      .hero-copy { display: contents; }
+      .hero-copy .eyebrow, .hero-copy h1, .hero-copy .role { grid-column: 1; }
+      .hero-copy .intro, .hero-copy .actions, .hero-copy .location { grid-column: 1 / -1; }
+      .portrait-wrap { grid-column: 2; grid-row: 1 / span 3; width: 100%; margin-top: 24px; }
+      .portrait-wrap::before { inset: -6px; border-radius: 13px; }
+      .portrait-wrap::after { inset: 12px -10px -12px 10px; }
+      .portrait { aspect-ratio: 3 / 4; border-radius: 10px; }
+      .btn { min-height: 44px; padding: 10px 15px; font-size: .84rem; }
+      .location { margin-top: 14px; }
+      .quick { grid-template-columns: 1fr; gap: 9px; margin-bottom: 50px; }
+      .quick-card { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 17px; }
+      .quick-card strong { font-size: 1.05rem; white-space: nowrap; }
+      .quick-card span { max-width: 48%; margin: 0; text-align: right; }
+      .trajectory-content { padding: 20px; }
+      .trajectory-content p { font-size: .9rem; }
+      .side-column { grid-template-columns: 1fr; }
+      .side-column .panel, .side-column .panel:first-child, .side-column .panel:last-child { grid-column: auto; }
+      .panel { padding: 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; color: #172433; }
+      .topbar, .actions, .footer { display: none; }
+      .hero { padding: 24px 0; }
+      .hero-grid { grid-template-columns: 1fr 150px; gap: 24px; }
+      .intro, .trajectory-content p, .skill p, .panel p, .education, .quick-card span { color: #435466; }
+      .quick-card, .panel, .trajectory-content { background: #fff; border-color: #ccd6df; box-shadow: none; }
+      .quick-card strong, .skill strong, .project strong, .education strong { color: #172433; }
+      .portrait-wrap::before, .portrait-wrap::after { display: none; }
+      .portrait { width: 130px; }
+      .content-grid { gap: 25px; }
+      .section, .panel, .job { break-inside: avoid; }
+      .tag { color: #24384b; border-color: #ccd6df; }
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#conteudo">Ir para o conteúdo</a>
-  <header class="topbar"><div class="container topbar-inner"><a class="brand" href="index.html" aria-label="DIAK Tecnologia — página inicial"><img src="assets/logo-para-fundo-escuro.png" alt="DIAK Tecnologia"></a><nav class="nav" aria-label="Navegação"><a href="index.html#sobre">A DIAK</a><a href="#experiencia" aria-current="page">Informações</a><a class="back" href="index.html">← Voltar ao site</a></nav></div></header>
-  <main id="conteudo">
-    <section class="hero"><div class="container hero-grid"><div><div class="eyebrow">A PESSOA POR TRÁS DOS PROJETOS</div><h1>Müller<br>Trindade Santos.</h1><div class="role">Suporte Técnico · Infraestrutura · Tecnologia</div><p class="intro">Estudante de Análise e Desenvolvimento de Sistemas, com experiência prática em suporte técnico, redes, telecomunicações, operações e atendimento ao usuário. Gosto de entender problemas, organizar processos e construir soluções que funcionem na realidade de quem as utiliza.</p><div class="actions"><a class="btn" href="mailto:mullerrubenstrindade@gmail.com">Entrar em contato ↗</a></div><p class="location">São Paulo </p></div><div class="portrait-wrap"><img class="portrait" src="assets/muller-trindade1.jpeg" alt="Retrato de Müller Trindade"></div></div></section>
-    <div class="container"><section class="quick" aria-label="Destaques profissionais"><div class="quick-card"><strong>6+ anos</strong><span>de experiência profissional</span></div><div class="quick-card"><strong>+40 chamados/dia</strong><span>em rotina de suporte técnico</span></div><div class="quick-card"><strong>ADS</strong><span>graduação em andamento</span></div></section></div>
-    <div class="container content-grid">
-      
-<section class="section" id="trajetoria">
-  <div class="section-head">
-    <h2>Minha trajetória</h2>
-  </div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="DIAK Tecnologia — página inicial">
+        <img src="assets/logo-para-fundo-escuro.png" alt="DIAK Tecnologia">
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html#sobre">A DIAK</a>
+        <a href="#trajetoria" aria-current="page">Informações</a>
+        <a class="back" href="index.html">← Voltar ao site</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="trajectory-content">
-    <p>
-        Minha história profissional começou cedo, em contato direto com pessoas, tecnologia e os desafios do dia a dia de um negócio. Ao longo do caminho, passei por diferentes áreas e responsabilidades, conhecendo de perto realidades que me ensinaram muito além de uma função específica.</p><p>Trabalhei com assistência técnica, atendimento ao cliente, vendas, suporte, telecomunicações e gestão de operações. Cada experiência acrescentou uma perspectiva diferente à minha forma de enxergar o trabalho: aprendi a lidar com pessoas, investigar problemas, organizar processos, assumir responsabilidades e buscar soluções mesmo diante de situações inesperadas.</p><p>Com o tempo, percebi que meu interesse pela tecnologia ia além de resolver problemas técnicos. Comecei a enxergar oportunidades de melhorar processos, simplificar tarefas e criar ferramentas que realmente fizessem diferença na rotina das pessoas.</p><p>Foi dessa inquietação que nasceu meu interesse pelo desenvolvimento de software. Hoje, curso Análise e Desenvolvimento de Sistemas e sigo aprofundando meus conhecimentos, transformando experiências práticas em capacidade de construir soluções.    </p><p>Nesse caminho, também nasceu a DIAK Tecnologia, um projeto pessoal que representa a união entre tudo o que vivi profissionalmente e aquilo que desejo construir: soluções tecnológicas pensadas a partir de necessidades reais.    </p><p>
-        Ainda estou construindo minha trajetória, mas carrego comigo uma convicção: antes de desenvolver uma solução, é preciso compreender o problema, ouvir as pessoas e entender o que realmente precisa ser feito.<p>Mais do que acumular experiências, procuro conectar tudo o que aprendi: tecnologia, operação, atendimento, gestão e desenvolvimento. Acredito que boas soluções começam quando sabemos ouvir, compreender e identificar o que realmente precisa ser resolvido.     
-    </p>
-  </div>
-</section></section>
-        <section class="section"><div class="section-head"><h2>Projetos em tecnologia</h2></div><div class="panel"><div class="project"><strong>ConectaCell · Projeto pessoal</strong><p>Aplicação desktop em Python para gestão de assistência técnica, clientes, aparelhos e ordens de serviço.</p></div><div class="project"><strong>Projetos de estudo</strong><p>Esse projeto é o melhor exemplo. É justamente para correlacionar teoria e prática da melhor forma possível.</p></div><div class="project"><strong>DIAK Tecnologia</strong><p>Projeto individual de soluções tecnológicas sob medida, com foco em compreender necessidades operacionais e desenvolver ferramentas úteis para negócios.</p></div><p style="margin-top:12px"><a href="https://github.com/mullerrtrindade" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Explorar projetos no GitHub ↗</a></p></div></section>
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">A pessoa por trás dos projetos</div>
+          <h1>Müller<br><span>Trindade Santos.</span></h1>
+          <div class="role">Suporte Técnico · Infraestrutura · Tecnologia</div>
+          <p class="intro">Estudante de Análise e Desenvolvimento de Sistemas, com experiência prática em suporte técnico, redes, telecomunicações, operações e atendimento ao usuário. Gosto de entender problemas, organizar processos e construir soluções que funcionem na realidade de quem as utiliza.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:mullerrubenstrindade@gmail.com">Entrar em contato <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="location">São Paulo</p>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="assets/muller-trindade1.jpeg" alt="Retrato de Müller Trindade">
+        </div>
       </div>
-      <aside class="side-column">
-        <section class="panel"><h3>Conhecimentos e ferramentas</h3><div class="skill"><strong>Redes e telecomunicações</strong><p>FTTH, TCP/IP, Wi-Fi, PPPoE, DNS, VPN, ONU/ONT, roteadores, Mikrotik, OLT, cabeamento e troubleshooting.</p></div><div class="skill"><strong>Suporte e monitoramento</strong><p>Help Desk N1/N2, acesso remoto, gestão de chamados, Grafana e escalonamento técnico.</p></div><div class="skill"><strong>Sistemas e operações</strong><p>Windows, Pacote Office, Excel, Google Workspace, CRM/ERP, relatórios, BI e tratamento de dados.</p></div><div class="skill"><strong>Desenvolvimento</strong><p>Python básico, Git/GitHub e aplicações desktop.</p></div></section>
-        <section class="panel"><h3>Formação acadêmica</h3><p class="education"><strong>SENAC</strong>Graduação em Análise e Desenvolvimento de Sistemas<br>Cursando — previsão Mar/2029</p></section>
-        <section class="panel"><h3>Formação complementar</h3><p class="education"><strong>Proz Educação</strong>Assistente de Vendas · 160h</p><strong>Escola Senai Roberto Simonsen</strong><p>Alinhamento estratégico alinhado à Gestão </p></strong><p class="education" style="margin-top:12px"><strong>Tríade Mentoring (Premium)</strong>Gestão Organizacional, Base de Clientes, Vendas e Operações · 40h</p></section>
-        <section class="panel"><h3>Informações adicionais</h3><p>Inglês técnico · conversação intermediária</p></section>
-        <section class="panel"><h3>Conecte-se</h3><div class="tag-list"><a class="tag" href="mailto:mullerrubenstrindade@gmail.com">E-mail</a><a class="tag" href="https://github.com/mullerrtrindade" target="_blank" rel="noopener noreferrer">GitHub</a><a class="tag" href="https://linkedin.com/in/mullerrtrindade" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="tag" href="https://wa.me/5511913634616" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></section>
+    </section>
+
+    <div class="container">
+      <section class="quick" aria-label="Destaques profissionais">
+        <div class="quick-card"><strong>6+ anos</strong><span>de experiência profissional</span></div>
+        <div class="quick-card"><strong>+40 chamados/dia</strong><span>em rotina de suporte técnico</span></div>
+        <div class="quick-card"><strong>ADS</strong><span>graduação em andamento</span></div>
+      </section>
+    </div>
+
+    <div class="container content-grid">
+      <div class="main-column">
+        <section class="section" id="trajetoria">
+          <div class="section-head"><h2>Minha trajetória</h2></div>
+          <div class="trajectory-content">
+            <p>Minha história profissional começou cedo, em contato direto com pessoas, tecnologia e os desafios do dia a dia de um negócio. Ao longo do caminho, passei por diferentes áreas e responsabilidades, conhecendo de perto realidades que me ensinaram muito além de uma função específica.</p>
+            <p>Trabalhei com assistência técnica, atendimento ao cliente, vendas, suporte, telecomunicações e gestão de operações. Cada experiência acrescentou uma perspectiva diferente à minha forma de enxergar o trabalho: aprendi a lidar com pessoas, investigar problemas, organizar processos, assumir responsabilidades e buscar soluções mesmo diante de situações inesperadas.</p>
+            <p>Com o tempo, percebi que meu interesse pela tecnologia ia além de resolver problemas técnicos. Comecei a enxergar oportunidades de melhorar processos, simplificar tarefas e criar ferramentas que realmente fizessem diferença na rotina das pessoas.</p>
+            <p>Foi dessa inquietação que nasceu meu interesse pelo desenvolvimento de software. Hoje, curso Análise e Desenvolvimento de Sistemas e sigo aprofundando meus conhecimentos, transformando experiências práticas em capacidade de construir soluções.</p>
+            <p>Nesse caminho, também nasceu a DIAK Tecnologia, um projeto pessoal que representa a união entre tudo o que vivi profissionalmente e aquilo que desejo construir: soluções tecnológicas pensadas a partir de necessidades reais.</p>
+            <p>Ainda estou construindo minha trajetória, mas carrego comigo uma convicção: antes de desenvolver uma solução, é preciso compreender o problema, ouvir as pessoas e entender o que realmente precisa ser feito.</p>
+            <p>Mais do que acumular experiências, procuro conectar tudo o que aprendi: tecnologia, operação, atendimento, gestão e desenvolvimento. Acredito que boas soluções começam quando sabemos ouvir, compreender e identificar o que realmente precisa ser resolvido.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head"><h2>Projetos em tecnologia</h2></div>
+          <div class="panel">
+            <div class="project">
+              <strong>ConectaCell · Projeto pessoal</strong>
+              <p>Aplicação desktop em Python para gestão de assistência técnica, clientes, aparelhos e ordens de serviço.</p>
+            </div>
+            <div class="project">
+              <strong>Projetos de estudo</strong>
+              <p>Esse projeto é o melhor exemplo. É justamente para trabalhar com a teoria e a prática da melhor forma possível.</p>
+            </div>
+            <div class="project">
+              <strong>DIAK Tecnologia</strong>
+              <p>Projeto individual de soluções tecnológicas sob medida, com foco em compreender necessidades operacionais e desenvolver ferramentas úteis para negócios.</p>
+            </div>
+            <a class="text-link" href="https://github.com/mullerrtrindade" target="_blank" rel="noopener noreferrer">Explorar projetos no GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-column" aria-label="Informações complementares">
+        <section class="panel">
+          <h3>Conhecimentos e ferramentas</h3>
+          <div class="skill"><strong>Redes e telecomunicações</strong><p>FTTH, TCP/IP, Wi-Fi, PPPoE, DNS, VPN, ONU/ONT, roteadores, Mikrotik, OLT, cabeamento e troubleshooting.</p></div>
+          <div class="skill"><strong>Suporte e monitoramento</strong><p>Help Desk N1/N2, acesso remoto, gestão de chamados, Grafana e escalonamento técnico.</p></div>
+          <div class="skill"><strong>Sistemas e operações</strong><p>Windows, Pacote Office, Excel, Google Workspace, CRM/ERP, relatórios, BI e tratamento de dados.</p></div>
+          <div class="skill"><strong>Desenvolvimento</strong><p>Python básico, Git/GitHub e aplicações desktop.</p></div>
+        </section>
+
+        <section class="panel">
+          <h3>Formação acadêmica</h3>
+          <p class="education"><strong>SENAC</strong>Graduação em Análise e Desenvolvimento de Sistemas<br>Cursando — previsão Mar/2029</p>
+        </section>
+
+        <section class="panel">
+          <h3>Formação complementar</h3>
+          <p class="education"><strong>Proz Educação</strong>Assistente de Vendas · 160h</p>
+          <p class="education"><strong>Escola Senai Roberto Simonsen</strong>Alinhamento estratégico alinhado à Gestão</p>
+          <p class="education"><strong>Tríade Mentoring (Premium)</strong>Gestão Organizacional, Base de Clientes, Vendas e Operações · 40h</p>
+        </section>
+
+        <section class="panel">
+          <h3>Informações adicionais</h3>
+          <p>Inglês técnico · conversação intermediária</p>
+        </section>
+
+        <section class="panel">
+          <h3>Conecte-se</h3>
+          <div class="tag-list">
+            <a class="tag" href="mailto:mullerrubenstrindade@gmail.com">E-mail</a>
+            <a class="tag" href="https://github.com/mullerrtrindade" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="tag" href="https://linkedin.com/in/mullerrtrindade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="tag" href="https://wa.me/5511913634616" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </section>
       </aside>
     </div>
   </main>
-  <footer class="footer"><div class="container footer-inner"><span>© 2026 Müller Trindade Santos</span><span>Uma página pessoal dentro do projeto <a href="index.html">DIAK Tecnologia</a>.</span></div></footer>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Müller Trindade Santos</span>
+      <span>Uma página pessoal dentro do projeto <a href="index.html">DIAK Tecnologia</a>.</span>
+    </div>
+  </footer>
 </body>
 </html>
